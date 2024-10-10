@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMY220 A2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>People's Voice</h1>
+    <p>Want to voice your opinion on certain topics? Vote below!</p>
+    <div class="container">
+      <div>
+        <h2>What would you name this cat?</h2>
+        <img
+          width="350"
+          src="https://i.redd.it/xdndt7o8l9e71.jpg"
+          alt="Cat picture"
+        />
+        <form onsubmit="voteForKitty(event)" id="poll">
+          <input type="radio" name="catName" id="pebble" value="pebble" />
+          <label for="pebble">Pebble | Votes: <span>0</span></label>
+          <br />
+          <input type="radio" name="catName" id="sunshine" value="sunshine" />
+          <label for="sunshine">Sunshine | Votes: <span>0</span></label>
+          <br />
+          <input type="radio" name="catName" id="miso" value="miso" />
+          <label for="miso">Miso | Votes: <span>0</span></label>
+          <br />
+          <input type="radio" name="catName" id="panko" value="panko" />
+          <label for="panko">Panko | Votes: <span>0</span></label>
+          <br />
+          <input type="radio" name="catName" id="snowball" value="snowball" />
+          <label for="snowball">Snowball | Votes: <span>0</span></label>
+          <br />
+          <p>Total Votes: <span id="total-votes">0</span></p>
+          <input type="submit" value="Vote" formtarget=""/>
+        </form>
+      </div>
+      <div>
+        <p>Live Voting Feed (bonus):</p>
+        <div id="feed"></div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
